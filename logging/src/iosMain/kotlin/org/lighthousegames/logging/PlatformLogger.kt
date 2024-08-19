@@ -20,12 +20,19 @@ actual class PlatformLogger actual constructor(actual val logLevel: LogLevelCont
             __dso_handle.ptr,
             OS_LOG_DEFAULT,
             OS_LOG_TYPE_DEBUG,
+            "%s",
             message("V", tag, msg)
         )
     }
 
     actual override fun debug(tag: String, msg: String) {
-        _os_log_internal(__dso_handle.ptr, OS_LOG_DEFAULT, OS_LOG_TYPE_INFO, message("D", tag, msg))
+        _os_log_internal(
+            __dso_handle.ptr,
+            OS_LOG_DEFAULT,
+            OS_LOG_TYPE_INFO,
+            "%s",
+            message("D", tag, msg)
+        )
     }
 
     actual override fun info(tag: String, msg: String) {
@@ -33,6 +40,7 @@ actual class PlatformLogger actual constructor(actual val logLevel: LogLevelCont
             __dso_handle.ptr,
             OS_LOG_DEFAULT,
             OS_LOG_TYPE_DEFAULT,
+            "%s",
             message("I", tag, msg)
         )
     }
@@ -42,6 +50,7 @@ actual class PlatformLogger actual constructor(actual val logLevel: LogLevelCont
             __dso_handle.ptr,
             OS_LOG_DEFAULT,
             OS_LOG_TYPE_ERROR,
+            "%s",
             message("W", tag, msg, t)
         )
     }
@@ -51,6 +60,7 @@ actual class PlatformLogger actual constructor(actual val logLevel: LogLevelCont
             __dso_handle.ptr,
             OS_LOG_DEFAULT,
             OS_LOG_TYPE_FAULT,
+            "%s",
             message("E", tag, msg, t)
         )
     }
