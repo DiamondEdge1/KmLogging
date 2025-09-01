@@ -1,33 +1,33 @@
 [versions]
-agp = "8.5.2"
-android-compileSdk = "34"
+agp = "8.11.0"
+android-compileSdk = "36"
 android-minSdk = "24"
-android-targetSdk = "34"
-androidx-activityCompose = "1.9.3"
-androidx-appcompat = "1.7.0"
-androidx-constraintlayout = "2.2.0"
-androidx-core-ktx = "1.15.0"
-androidx-lifecycle = "2.8.4"
+android-targetSdk = "36"
+androidx-activityCompose = "1.10.1"
+androidx-appcompat = "1.7.1"
+androidx-constraintlayout = "2.2.1"
+androidx-core-ktx = "1.17.0"
+androidx-lifecycle = "2.9.3"
 androidx-material = "1.12.0"
-compose-multiplatform = "1.7.0"
+compose-multiplatform = "1.8.2"
 dokka = "2.0.0"
-firebaseBom = "33.9.0"
-kotlin = "2.0.21"
-kotlinx-coroutines = "1.9.0"
-kotlinxCoroutinesAndroid = "1.5.0"
-kotlinxDatetime = "0.6.2"
-lifecycleRuntimeKtx = "2.4.0"
-logback = "1.5.16"
-slf4jApi = "2.0.16"
+firebaseBom = "34.2.0"
+kotlin = "2.2.10"
+kotlinx-coroutines = "1.10.2"
+kotlinxCoroutinesAndroid = "1.10.2"
+kotlinxDatetime = "0.7.1"
+lifecycleRuntimeKtx = "2.9.3"
+logback = "1.5.18"
+slf4jApi = "2.0.17"
 statelyConcurrency = "2.1.0"
 logging = "2.0.3"
 
 [libraries]
 androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
-firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
+firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
-firebase-config-ktx = { module = "com.google.firebase:firebase-config-ktx" }
-firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
+firebase-config-ktx = { module = "com.google.firebase:firebase-config" }
+firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }

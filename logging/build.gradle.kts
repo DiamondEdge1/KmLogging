@@ -68,6 +68,12 @@ kotlin {
 
         val jsMain by getting
         val wasmJsMain by getting
+
+      all {
+        languageSettings.apply {
+          optIn("kotlin.time.ExperimentalTime")
+        }
+      }
     }
 }
 

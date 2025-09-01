@@ -1,6 +1,6 @@
 package com.diamondedge.logging
 
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 
 internal actual fun getPlatform(): PlatformApi = WasmPlatform()
 

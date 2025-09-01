@@ -1,6 +1,6 @@
 package com.diamondedge.logging
 
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
 
 class PrintLogger(logLevel: LogLevelController) : Logger, LogLevelController by logLevel {
 
