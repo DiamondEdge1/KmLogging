@@ -1,7 +1,7 @@
 # Kotlin Multiplatform Logging  <img src="https://upload.wikimedia.org/wikipedia/commons/0/06/Kotlin_Icon.svg" width="30">  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Android_robot.svg" width="30">  <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Apple_iOS_logo.svg" width="30">  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" width="30">  <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/OpenJDK_logo.svg" width="80">
 
 [![ver](https://img.shields.io/maven-central/v/com.diamondedge/logging)](https://repo1.maven.org/maven2/com/diamondedge/logging/)
-[![Kotlin](https://img.shields.io/badge/Kotlin-2.0.21-blue.svg?logo=kotlin)](http://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/Kotlin-2.2.20-blue.svg?logo=kotlin)](http://kotlinlang.org)
 ![kmm](https://img.shields.io/badge/Multiplatform-Android%20iOS%20WasmJS%20JS%20JVM-blue)
 [![License](https://img.shields.io/badge/License-Apache--2.0-blue)](http://www.apache.org/licenses/LICENSE-2.0)
 [![libs.tech recommends](https://libs.tech/project/332284926/badge.svg)](https://libs.tech/project/332284926/kmlogging)
