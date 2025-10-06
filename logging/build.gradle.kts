@@ -1,4 +1,5 @@
-import com.vanniktech.maven.publish.SonatypeHost
+import com.vanniktech.maven.publish.JavadocJar
+import com.vanniktech.maven.publish.KotlinMultiplatform
 import org.jetbrains.kotlin.gradle.ExperimentalKotlinGradlePluginApi
 import org.jetbrains.kotlin.gradle.ExperimentalWasmDsl
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
@@ -6,15 +7,15 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
-    id("org.jetbrains.dokka")
-    id("com.vanniktech.maven.publish") version "0.29.0"
+    alias(libs.plugins.dokka)
+    id("com.vanniktech.maven.publish") version "0.34.0"
 }
 
 kotlin {
     androidTarget {
         @OptIn(ExperimentalKotlinGradlePluginApi::class)
         compilerOptions {
-            jvmTarget.set(JvmTarget.JVM_11)
+            jvmTarget.set(JvmTarget.JVM_17)
         }
         publishLibraryVariants("release")
     }
@@ -73,15 +74,15 @@ kotlin {
 
 android {
     namespace = "com.diamondedge.core"
-    compileSdk = 34
+    compileSdk = libs.versions.android.compileSdk.get().toInt()
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
     defaultConfig {
-        minSdk = 21
+        minSdk = libs.versions.android.minSdk.get().toInt()
         consumerProguardFiles("proguard.txt")
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     testOptions {
         unitTests {
@@ -91,17 +92,8 @@ android {
     }
 }
 
-tasks {
-    create<Jar>("javadocJar") {
-        println("creating javadocJar")
-        archiveClassifier.set("javadoc")
-        dependsOn(dokkaHtml)
-        from(dokkaHtml.get().outputDirectory)
-    }
-}
-
 extra["artifactId"] = "logging"
-extra["artifactVersion"] = "2.0.3"
+extra["artifactVersion"] = "2.1.0"
 extra["libraryName"] = "KmLogging: Kotlin Multiplatform Logging"
 extra["libraryDescription"] = "KmLogging is a high performance, extensible and easy to use logging library for Kotlin Multiplatform development"
 extra["gitUrl"] = "https://github.com/DiamondEdge1/KmLogging"
@@ -127,6 +119,7 @@ project.group = groupId
 project.version = artifactVersion
 
 mavenPublishing {
+    configure(KotlinMultiplatform(javadocJar = JavadocJar.Dokka("dokkaHtml"), sourcesJar = true))
     coordinates(groupId = groupId, artifactId = artifactId, version = artifactVersion)
     pom {
         name.set(libraryName)
@@ -166,7 +159,4 @@ mavenPublishing {
             }
         }
     }
-
-    publishToMavenCentral(SonatypeHost.S01)
-    signAllPublications()
 }

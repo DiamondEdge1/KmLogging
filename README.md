@@ -165,6 +165,7 @@ KmLogging.setLoggers(PlatformLogger(FixedLogLevel(BuildConfig.DEBUG)))
 
 | KmLogging version | Kotlin version |
 |-------------------|----------------|
+| 2.1.0             | 2.2.20         |
 | 2.0.3             | 2.0.21         |
 | 1.5.0             | 1.9.24         |
 | 1.4.2             | 1.8.22         |

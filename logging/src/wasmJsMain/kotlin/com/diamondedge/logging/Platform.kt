@@ -1,6 +1,7 @@
 package com.diamondedge.logging
 
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
+import kotlin.time.ExperimentalTime
 
 internal actual fun getPlatform(): PlatformApi = WasmPlatform()
 
@@ -13,6 +14,8 @@ internal class WasmPlatform : PlatformApi {
     override val name: String = "Wasm"
     override val version: Double = 1.0        //TODO
     override val versionName: String = "1.0"  //TODO
+
+    @OptIn(ExperimentalTime::class)
     override val timeNanos: Long
         get() {
             val now = Clock.System.now()

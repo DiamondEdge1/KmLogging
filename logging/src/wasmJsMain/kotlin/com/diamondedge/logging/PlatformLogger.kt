@@ -1,6 +1,7 @@
 package com.diamondedge.logging
 
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
+import kotlin.time.ExperimentalTime
 
 internal actual fun getLoggerApi(): PlatformLoggerApi = WasmPlatformLogger()
 
@@ -30,6 +31,7 @@ internal class WasmPlatformLogger : PlatformLoggerApi {
         return Pair("", "")
     }
 
+    @OptIn(ExperimentalTime::class)
     private fun message(level: String, tag: String, msg: String, t: Throwable?): String {
         val now = Clock.System.now()
         val str = if (tag.isEmpty()) "$level:" else "$level/$tag:"

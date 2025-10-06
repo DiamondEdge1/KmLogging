@@ -1,6 +1,7 @@
 package com.diamondedge.logging
 
-import kotlinx.datetime.Clock
+import kotlin.time.Clock
+import kotlin.time.ExperimentalTime
 
 class PrintLogger(logLevel: LogLevelController) : Logger, LogLevelController by logLevel {
 
@@ -24,6 +25,7 @@ class PrintLogger(logLevel: LogLevelController) : Logger, LogLevelController by 
         println(message("E", tag, msg, t))
     }
 
+    @OptIn(ExperimentalTime::class)
     private fun message(level: String, tag: String, msg: String, t: Throwable?): String {
         val now = Clock.System.now()
         val str = if (tag.isEmpty()) "$level:" else "$level/$tag:"

@@ -1,42 +1,30 @@
 [versions]
-agp = "8.5.2"
-android-compileSdk = "34"
+agp = "8.13.0"
+android-compileSdk = "36"
 android-minSdk = "24"
-android-targetSdk = "34"
-androidx-activityCompose = "1.9.3"
-androidx-appcompat = "1.7.0"
-androidx-constraintlayout = "2.2.0"
-androidx-core-ktx = "1.15.0"
-androidx-lifecycle = "2.8.4"
-androidx-material = "1.12.0"
-compose-multiplatform = "1.7.0"
+android-targetSdk = "36"
+androidx-activityCompose = "1.11.0"
+androidx-lifecycle = "2.9.4"
+compose-multiplatform = "1.9.0"
 dokka = "2.0.0"
-firebaseBom = "33.9.0"
-kotlin = "2.0.21"
-kotlinx-coroutines = "1.9.0"
-kotlinxCoroutinesAndroid = "1.5.0"
-kotlinxDatetime = "0.6.2"
-lifecycleRuntimeKtx = "2.4.0"
-logback = "1.5.16"
-slf4jApi = "2.0.16"
+firebaseBom = "34.3.0"
+kotlin = "2.2.20"
+kotlinx-coroutines = "1.10.2"
+kotlinxDatetime = "0.7.1"
+logback = "1.5.19"
+slf4jApi = "2.0.17"
 statelyConcurrency = "2.1.0"
 logging = "2.0.3"
 
 [libraries]
-androidx-lifecycle-runtime-ktx = { module = "androidx.lifecycle:lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
 firebase-analytics-ktx = { module = "com.google.firebase:firebase-analytics-ktx" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 firebase-config-ktx = { module = "com.google.firebase:firebase-config-ktx" }
 firebase-crashlytics-ktx = { module = "com.google.firebase:firebase-crashlytics-ktx" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
-androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
-androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
-androidx-material = { group = "com.google.android.material", name = "material", version.ref = "androidx-material" }
-androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
-kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "kotlinxCoroutinesAndroid" }
 kotlinx-coroutines-swing = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-swing", version.ref = "kotlinx-coroutines" }
 kotlinx-datetime = { module = "org.jetbrains.kotlinx:kotlinx-datetime", version.ref = "kotlinxDatetime" }
 logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
