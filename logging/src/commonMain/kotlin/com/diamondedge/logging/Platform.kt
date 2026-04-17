@@ -25,5 +25,6 @@ object Platform {
     val name: String = api.name
     val version: Double = api.version
     val versionName: String = api.versionName
-    val timeNanos: Long = api.timeNanos
+    val timeNanos: Long
+        get() = api.timeNanos
 }

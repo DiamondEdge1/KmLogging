@@ -59,9 +59,9 @@ kotlin {
             implementation(compose.preview)
             implementation(libs.androidx.activity.compose)
             implementation(project.dependencies.platform(libs.firebase.bom))
-            implementation(libs.firebase.analytics.ktx)
-            implementation(libs.firebase.config.ktx)
-            implementation(libs.firebase.crashlytics.ktx)
+            implementation(libs.firebase.analytics)
+            implementation(libs.firebase.config)
+            implementation(libs.firebase.crashlytics)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -72,8 +72,8 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodel)
             implementation(libs.androidx.lifecycle.runtime.compose)
-            implementation(libs.logging)
-//            implementation(project(":logging"))
+//            implementation(libs.logging)
+            implementation(project(":logging"))
         }
         desktopMain.dependencies {
             implementation(compose.desktop.currentOs)

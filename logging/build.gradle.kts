@@ -8,7 +8,7 @@ plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.dokka)
-    id("com.vanniktech.maven.publish") version "0.34.0"
+    id("com.vanniktech.maven.publish") version "0.36.0"
 }
 
 kotlin {
@@ -93,7 +93,7 @@ android {
 }
 
 extra["artifactId"] = "logging"
-extra["artifactVersion"] = "2.1.0"
+extra["artifactVersion"] = "2.1.1"
 extra["libraryName"] = "KmLogging: Kotlin Multiplatform Logging"
 extra["libraryDescription"] = "KmLogging is a high performance, extensible and easy to use logging library for Kotlin Multiplatform development"
 extra["gitUrl"] = "https://github.com/DiamondEdge1/KmLogging"
@@ -119,7 +119,7 @@ project.group = groupId
 project.version = artifactVersion
 
 mavenPublishing {
-    configure(KotlinMultiplatform(javadocJar = JavadocJar.Dokka("dokkaHtml"), sourcesJar = true))
+    configure(KotlinMultiplatform(javadocJar = JavadocJar.Dokka("dokkaGeneratePublicationHtml"), sourcesJar = true))
     coordinates(groupId = groupId, artifactId = artifactId, version = artifactVersion)
     pom {
         name.set(libraryName)
