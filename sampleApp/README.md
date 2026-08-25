@@ -30,16 +30,31 @@ Notes:
   changes occur
   so you will know when to call KmLogging.setupLoggingFlags() to update the log levels.
 
+## Project structure
+
+The sample is split into four modules:
+
+* `:sampleApp:shared` — Kotlin Multiplatform library holding the shared Compose UI
+  (`commonMain`) and platform code; produces the `Shared` iOS framework.
+* `:sampleApp:androidApp` — Android application (`MainActivity`, `App`, launcher manifest).
+* `:sampleApp:desktopApp` — JVM desktop application (`Main.kt`).
+* `iosApp` — SwiftUI shell. The `.xcodeproj` is not checked in; see
+  [iosApp/README.md](iosApp/README.md) for bring-up.
+
 ## Running the sample app
 
 ### Android
 
-* Run `sampleApp.composeApp` from Android Studio as you would any other Android app.
+* Run `sampleApp.androidApp` from Android Studio as you would any other Android app.
 
 ### Desktop
 
-* Run from the commandline using: ./gradlew :sampleApp:composeApp:run
+* Run from the commandline using: ./gradlew :sampleApp:desktopApp:run
 
 ### Browser (WASM)
 
-* Run from the commandline using: ./gradlew :sampleApp:composeApp:wasmJsBrowserRun  
+* Run from the commandline using: ./gradlew :sampleApp:shared:wasmJsBrowserRun
+
+### iOS
+
+* See [iosApp/README.md](iosApp/README.md).

@@ -10,3 +10,5 @@ node_modules
 kotlin-js-store
 .externalNativeBuild
 notes.txt
+# iOS Xcode project is generated locally, not checked in (see sampleApp/iosApp/README.md)
+sampleApp/iosApp/iosApp.xcodeproj

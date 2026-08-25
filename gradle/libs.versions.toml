@@ -1,20 +1,20 @@
 [versions]
-agp = "8.13.2"
-android-compileSdk = "36"
-android-minSdk = "24"
-android-targetSdk = "36"
+agp = "9.3.2"
+kotlin = "2.4.10"
+composeMultiplatform = "1.12.0"
 androidx-activityCompose = "1.13.0"
-androidx-lifecycle = "2.10.0"
-compose-multiplatform = "1.10.3"
 dokka = "2.2.0"
-firebaseBom = "34.12.0"
-kotlin = "2.3.20"
-kotlinx-coroutines = "1.10.2"
-kotlinxDatetime = "0.7.1"
-logback = "1.5.32"
-slf4jApi = "2.0.17"
+kotlinxDatetime = "0.8.0"
+kotlinx-coroutines = "1.11.0"
+androidx-lifecycle = "2.11.0"
+firebaseBom = "34.18.0"
+logback = "1.6.3"
+slf4jApi = "2.0.18"
 statelyConcurrency = "2.1.0"
-logging = "2.1.0"
+logging = "2.1.2"
+android-compileSdk = "37"
+android-minSdk = "24"
+android-targetSdk = "37"
 
 [libraries]
 firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
@@ -22,6 +22,12 @@ firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "fir
 firebase-config = { module = "com.google.firebase:firebase-config" }
 firebase-crashlytics = { module = "com.google.firebase:firebase-crashlytics" }
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
+compose-runtime = { group = "org.jetbrains.compose.runtime", name = "runtime", version.ref = "composeMultiplatform" }
+compose-foundation = { group = "org.jetbrains.compose.foundation", name = "foundation", version.ref = "composeMultiplatform" }
+compose-ui = { group = "org.jetbrains.compose.ui", name = "ui", version.ref = "composeMultiplatform" }
+compose-material = { group = "org.jetbrains.compose.material", name = "material", version.ref = "composeMultiplatform" }
+compose-tooling = { group = "org.jetbrains.compose.ui", name = "ui-tooling", version.ref = "composeMultiplatform" }
+compose-tooling-preview = { group = "org.jetbrains.compose.ui", name = "ui-tooling-preview", version.ref = "composeMultiplatform" }
 androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
 androidx-lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidx-lifecycle" }
@@ -35,7 +41,9 @@ logging = { module = "com.diamondedge:logging", version.ref = "logging" }
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
 androidLibrary = { id = "com.android.library", version.ref = "agp" }
-composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
+androidKotlinMultiplatformLibrary = { id = "com.android.kotlin.multiplatform.library", version.ref = "agp" }
+composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "composeMultiplatform" }
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinJvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }

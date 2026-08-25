@@ -30,4 +30,6 @@ dependencyResolutionManagement {
 }
 
 include(":logging")
-include(":sampleApp:composeApp")
+include(":sampleApp:shared")
+include(":sampleApp:androidApp")
+include(":sampleApp:desktopApp")
